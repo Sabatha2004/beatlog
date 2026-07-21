@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI',sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+h1{
+  font-size:2rem;
+  margin-bottom:2rem;
+  color:#1db954;
+  letter-spacing:2px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap:0.75rem;
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+
+input, textarea {
+
+  background: #1a1a1a;
+  border:1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color:#ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus, textarea:focus{
+  border-color: #1db954;
+}
+
+textarea{
+  resize: vertical;
+  min-height:80px;
+}
+
+button{
+  background: #1db954;
+  color: #000000;
+  border: none;
+  border-radius:6px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover{
+  background:#17a349;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width:500px;
+}
+
+li{
+  background:#1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+li h3{
+  font-size: 1.1rem;
+  color: #1db954;
+}
+
+li p {
+  font-size: 0.85rem;
+  color: #aaaaaa;
+}
+
+li a {
+  color: #1db954;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+li a:hover{
+  text-decoration: underline;
+}
+
+li button{
+  background:#2a2a2a;
+  color:#ff4444;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+li button:hover{
+  background:#ff4444;
+  color: #ffffff;
+}
