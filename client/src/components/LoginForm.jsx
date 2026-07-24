@@ -3,6 +3,7 @@ import axios from 'axios'
 import {useAuth} from '../context/AuthContext'
 
 function LoginForm(){
+    const API_URL = import.meta.env.VITE_API_URL
     const {login} = useAuth()
     const [isRegistering, setIsRegistering] = useState(false)
     const [formData, setFormData] = useState({username: '',email: '', password:''})
@@ -17,9 +18,9 @@ function LoginForm(){
         try{
             if(isRegistering){
 
-                await axios.post('http://localhost:5000/api/auth/register', formData)
+                await axios.post(`${API_URL}/api/auth/register`, formData)
 
-            const loginResponse = await axios.post('http://localhost:5000/api/auth/login',{
+            const loginResponse = await axios.post(`${API_URL}/api/auth/login`,{
                 email: formData.email,
                 password: formData.password
             })
@@ -28,7 +29,7 @@ function LoginForm(){
 
             } else {
             const response = await axios.post(
-                'http://localhost:5000/api/auth/login',
+                `${API_URL}/api/auth/login`,
                 formData,
                 {headers: {Authorization: `Bearer ${token}`}}
             )

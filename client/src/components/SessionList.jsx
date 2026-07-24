@@ -3,6 +3,7 @@ import axios from 'axios'
 import {useAuth} from '../context/AuthContext'
 
 function SessionList({sessions, setSessions}) {
+    const API_URL = import.meta.env.VITE_API_URL
     const {token} = useAuth()
     const[loading, setLoading] =  useState(true)
 
@@ -11,7 +12,7 @@ function SessionList({sessions, setSessions}) {
         const fetchSessions = async () => {
 
             try{
-                const response = await axios.get('http://localhost:5000/api/sessions')
+                const response = await axios.get(`${API_URL}/api/sessions`)
                 setSessions(response.data),
 
                 {headers: {Authorziation: `Bearer ${token}`}}
@@ -30,7 +31,7 @@ function SessionList({sessions, setSessions}) {
     const handleDelete = async (id) => {
 
         try {
-            await axios.delete('http://localhost:5000/api/sessions/${id}')
+            await axios.delete(`${API_URL}/api/sessions/${id}`)
             setSessions(sessions.filter(session => session.id !==id)),
             //remember: "filter" creates a brand new array
             

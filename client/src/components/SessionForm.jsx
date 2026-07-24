@@ -5,6 +5,7 @@ import axios from 'axios'
 import {useAuth} from '../context/AuthContext'
 
 function SessionForm({onSessionAdded}){
+    const API_URL = import.meta.env.VITE_API_URL
     const {token} = useAuth()
     const [formData, setFormData] = useState({
 
@@ -25,7 +26,7 @@ function SessionForm({onSessionAdded}){
         e.preventDefault()
         try{
             const response = await axios.post(
-                'http://localhost:5000/api/sessions',
+                `${API_URL}/api/sessions`,
 
                 formData,
                 {headers: {Authorization: `Bearer ${token}`}}
